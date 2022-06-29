@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Recetas</title>
+
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>    
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">  
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+
+    <div class="ht">
+      <img src="img/coffeg32.gif">
+      <span style=""><br><br>&nbsp;&nbsp;<h1>Mis</h1>&nbsp;&nbsp;<h1 class="y">Recetas</h1></span>
+      <br>
+    </div>
+
+    <div class="mt-2"></div>
+
+
+
+<div id="card-app">
+
+
+  <div id="app">
+
+    <div class="menu">
+
+      <button @click="filter('cat1')" 
+              :class="{selected: selectedCat === 'cat1'}">Express
+      </button>
+
+      <button @click="filter('cat2')" 
+              :class="{selected: selectedCat === 'cat2'}">Platos
+      </button>
+
+
+      <button @click="filter('cat3')" 
+              :class="{selected: selectedCat === 'cat3'}">Categoria 3
+      </button>        
+
+
+      <button @click="filter('all')" 
+              :class="{selected: selectedCat === 'all'}">All
+      </button>
+    </div>
+    <div v-if="selectedCat === preview.cat || selectedCat === 'all'" v-for="preview in previews" :class="'preview ' + preview.cat">
+    </div>
+
+  </div>
+
+      <div class="card-body">
+        <h5 class="card-title text-center">
+          <i class="fa fa-book" aria-hidden="true"></i> Selecc. Categoría <i class="fa fa-book" aria-hidden="true"></i>
+        </h5>
+        <!-- Month Menú -->
+        <ul class="nav nav-tabs">
+          <li><a data-toggle="tab" href="#c1">Express</a></li>
+          <li><a data-toggle="tab" href="#c2">Platos</a></li>
+          <li><a data-toggle="tab" href="#c3">Categoria 3</a></li>
+          <li><a class="active" data-toggle="tab" href="#all">All</a></li>          
+        </ul>
+
+        <div class="tab-content">
+          <div id="c1" class="tab-pane fade mt-2">
+              <a class="btn btn-secondary btn-sm"
+                  href="https://docs.google.com/document/d/1atmmblkLUlZm4yGF-c5x2ZmJfhtwGqPi7C6mCvyfwLY/edit?usp=sharing"
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  barras avena
+              </a>
+          </div>
+          <div id="c2" class="tab-pane fade mt-2">
+              <a class="btn btn-secondary btn-sm" 
+                  href="https://docs.google.com/document/d/1XeNQ2Cx0tcQKGw1nV1JGSZaHUAynkd_5JBEW2v9ktvE/edit?usp=sharing" 
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>                  
+                  carne soja
+              </a>
+
+              <a class="btn btn-secondary btn-sm"
+                  href="https://docs.google.com/document/d/172fW55PC4ImRSA2omG9nuNb5oPjwDay8_RBemRnhQ60/edit?usp=sharing"
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  pechuga pollo
+              </a>
+
+
+              <a class="btn btn-secondary btn-sm"
+                  href="https://docs.google.com/document/d/172fW55PC4ImRSA2omG9nuNb5oPjwDay8_RBemRnhQ60/edit?usp=sharing"
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  gangsta taco
+              </a>  
+          </div>
+          <div id="c3" class="tab-pane fade mt-2">
+              <h1>Cat 3</h1>
+          </div>
+
+          <div id="all" class="tab-pane fade mt-2 show active">
+
+
+              <a class="btn btn-secondary btn-sm"
+                  href="https://docs.google.com/document/d/1atmmblkLUlZm4yGF-c5x2ZmJfhtwGqPi7C6mCvyfwLY/edit?usp=sharing"
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  barras avena
+              </a>
+
+
+              <a class="btn btn-secondary btn-sm" 
+                  href="https://docs.google.com/document/d/1XeNQ2Cx0tcQKGw1nV1JGSZaHUAynkd_5JBEW2v9ktvE/edit?usp=sharing" 
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>                  
+                  carne soja
+              </a>
+
+              <a class="btn btn-secondary btn-sm"
+                  href="https://docs.google.com/document/d/172fW55PC4ImRSA2omG9nuNb5oPjwDay8_RBemRnhQ60/edit?usp=sharing"
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  pechuga pollo
+              </a>
+
+
+              <a class="btn btn-secondary btn-sm"
+                  href="https://docs.google.com/document/d/172fW55PC4ImRSA2omG9nuNb5oPjwDay8_RBemRnhQ60/edit?usp=sharing"
+                  target="_blank">
+
+                  <i class="fa fa-file-o" aria-hidden="true"></i>
+                  gangsta taco
+              </a>              
+
+
+          </div>    
+
+        </div>
+
+      </div>
+
+<!-- fin div app -->
+</div>
+
+
+
+
+
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js'></script>
+
+    <!-- js -->
+    <script  src="js/script.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+
+</body>
+</html>
